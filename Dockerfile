@@ -8,5 +8,5 @@ WORKDIR /app
 ENV PYTHON /usr/bin/python2.7
 RUN npm install --production && npm install mongodb connect-mongo redis connect-redis gm
 RUN npm install git+https://github.com/earthsenze/nodebb-plugin-s3-uploads.git
-ADD start.sh .
-CMD ./start.sh
+COPY start.sh /app/start.sh
+CMD /app/start.sh
